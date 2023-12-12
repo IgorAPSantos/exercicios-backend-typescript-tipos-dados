@@ -31,14 +31,11 @@ const usuarios: { nome: string, idade: number, status: boolean }[] = [
     },
 ]
 
-const filtrarUsuarios = (listaUsuarios: { nome: string, idade: number, status: boolean }[], nomeUsuario: string): { nome: string, idade: number, status: boolean }[] => {
-    const usuariosEncontrados: { nome: string, idade: number, status: boolean }[] = [];
+const filtrarUsuarios = (listaUsuarios: { nome: string, idade: number, status: boolean }[], filtro: string): { nome: string, idade: number, status: boolean }[] => {
+    const usuariosEncontrados = listaUsuarios.filter(usuario => {
+        return usuario.nome.toLowerCase().includes(filtro.toLowerCase())
+    });
 
-    for (const usuario of listaUsuarios) {
-        if (usuario.nome.toLowerCase().includes(nomeUsuario.toLocaleLowerCase())) {
-            usuariosEncontrados.push(usuario)
-        }
-    }
     return usuariosEncontrados
 }
 
