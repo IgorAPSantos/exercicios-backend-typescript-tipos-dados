@@ -8,13 +8,11 @@ const produto1: { produto: string, lote: number, ano: number, qtd: number } = {
 
 const gerarEtiqueta = (item: { produto: string, lote: number, ano: number, qtd: number }): string[] => {
     const resultado: string[] = [];
-    let i: number = item.qtd;
     let indice: number = 1;
 
-    while (i !== 0) {
+    for (let i = 0; i < item.qtd; i++) {
         resultado.push(`${item.lote}-${item.ano}-${indice.toString().padStart(3, '0')}`)
         indice++
-        i--
     }
 
     return resultado
