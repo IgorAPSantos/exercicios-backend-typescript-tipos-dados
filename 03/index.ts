@@ -3,7 +3,7 @@ const criarTabuada = (arrayNumeros: number[]): string => {
     let i: number;
 
     arrayNumeros.forEach(numero => {
-        for (i = 1; i < 11; i++) {
+        for (i = 0; i <= 10; i++) {
             resposta += `${numero} x ${i} = ${numero * i} \n`
             if (i === 10) {
                 resposta += ' --------------- \n \n'
