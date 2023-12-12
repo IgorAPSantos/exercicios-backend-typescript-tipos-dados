@@ -31,15 +31,15 @@ const usuarios: { nome: string, idade: number, status: boolean }[] = [
     },
 ]
 
-const buscarNome = (listaUsuarios: { nome: string, idade: number, status: boolean }[], nomeUsuario: string): string[] => {
-    const usuariosEncontrados: string[] = [];
+const filtrarUsuarios = (listaUsuarios: { nome: string, idade: number, status: boolean }[], nomeUsuario: string): { nome: string, idade: number, status: boolean }[] => {
+    const usuariosEncontrados: { nome: string, idade: number, status: boolean }[] = [];
 
     for (const usuario of listaUsuarios) {
         if (usuario.nome.toLowerCase().includes(nomeUsuario.toLocaleLowerCase())) {
-            usuariosEncontrados.push(usuario.nome)
+            usuariosEncontrados.push(usuario)
         }
     }
     return usuariosEncontrados
 }
 
-console.log(buscarNome(usuarios, 'gui'));
+console.log(filtrarUsuarios(usuarios, 'jo'));
